@@ -1,0 +1,893 @@
+@font-face {
+    font-family: rejo;
+    src: url(./Fonts/Rejouice-Headline.ttf);
+}
+@font-face {
+    font-family: nb;
+    src: url(./Fonts/NBInternationalProBoo.ttf);
+}
+/* ===( CODE AASHU )=== */
+::selection{
+    color: #f53607;
+}
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family: nb;
+}
+html, body{
+    height: 100%;
+    width: 100%;
+}
+.loader{
+    background-color: #000;
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    z-index: 99;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .4s ease;
+}
+.loader h2 span{
+    display: inline-block;
+    color: #fff;
+    font-weight: lighter;
+}
+.page1{
+    height: 100vh;
+    width: 100%;
+}
+.cursor{
+    width: 7vw;
+    height: 7vw;
+    background-color: #FF5F38;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    position: fixed;
+    transform: translate(-50%,-50%);
+    z-index: 4;
+}
+.cursor h4{
+    font-size: 1.2vw;
+    font-weight: lighter;
+    color: #1a1919;
+}
+.menu{
+    height: 0vh;
+    position: absolute;
+}
+.menu.active{
+    position: absolute;
+    z-index: 6;
+    height: 67vh;
+    width: 100vw;
+    background-color: #FF5F38;
+}
+.menu-header{
+    height: 40px;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0vw 3vw;
+    margin-top: 2vw;
+}
+.menu-header a{
+    color: #2D2B2B;
+    text-decoration: none;
+    font-weight: lighter;
+    cursor: pointer;
+    font-weight: lighter;
+    font-size: 1.5vw;
+    letter-spacing: -1px;
+}
+.menu-header #close{
+    position: relative;
+}
+.menu-header #close::after{
+    content: '';
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    background-color: #000;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform .35s ease-out;
+}
+.menu-header #close:hover::after{
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+.menu-sec{
+    height: 250px;
+    width: 100vw;
+    padding: 0vw 3vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+.menu-sec .vid{
+    height: 250px;
+    width: 300px;
+    border-radius: 8px;
+    position: relative;
+}
+.menu-sec .vid video{
+    width: 300px;
+    height: 220px;
+    border-radius: 8px;
+}
+.menu-sec .vid .play{
+    display: flex;
+    position: absolute;
+    left: 0;
+    bottom: 5px;
+    gap: 5px;
+    font-weight: lighter;
+}
+.menu-sec .vid .play #play{
+    position: relative;
+}
+.menu-sec .vid .play #play::after{
+    content: '';
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    background-color: #000;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform .35s ease-out;
+}
+.menu-sec .vid .play #play:hover::after{
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+.menu-sec .vid .play i{
+    color: #fff;
+}
+.menu-sec .vid .play h4{
+    font-weight: lighter;
+    font-size: 1.1vw;
+    margin-left: 170px;
+}
+.menu-sec .links h3{
+    font-size: 3.1vw;
+    font-weight: lighter;
+    margin-right: 15vw;
+    cursor: pointer;
+    line-height: 1;
+    position: relative;
+}
+.menu-sec .links h3::after{
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 50%;
+    bottom: 0;
+    left: 0;
+    transform: scaleX(0);
+    background-color: #000;
+    transform-origin: bottom right;
+    transition: transform .35s ease-out;
+}
+.menu-sec .links h3:hover::after{
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+.menu-sec .links button{
+    background-color: transparent;
+    border: 1px solid #000;
+    padding: 1vw 1.8vw;
+    border-radius: 5px;
+    font-size: 1.2vw;
+    margin: 1.5vw 0vw 0vw 1.5vw;
+    cursor: pointer;
+}
+.menu-sec .links button:hover{
+    background-color: #000;
+    color: #FF5F38;
+    transition: background-color .3s ease;
+}
+.menu .menu-border{
+    height: 1px;
+    width: 0vw;
+    margin: 4vw 3vw 0vw 3vw;
+    background-color: #2D2B2B;
+}
+.menu .small-links{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.menu .small-links h4{
+    font-weight: lighter;
+    padding: 1vw 3vw;
+}
+.menu .small-links h3{
+    font-weight: lighter;
+    padding: 1vw 3vw;
+    font-size: 1.2vw;
+    cursor: pointer;
+    position: relative;
+}
+.menu .small-links h3::after{
+    content: '';
+    position: absolute;
+    height: 1px;
+    width: 80%;
+    bottom: 25%;
+    left: 10%;
+    transform: scaleX(0);
+    background-color: #000;
+    transform-origin: bottom right;
+    transition: transform .35s ease-out;
+}
+.menu .small-links h3:hover::after{
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+.page1 video{
+    height: 100vh;
+    width: 100vw;
+    object-fit: cover;
+    position: absolute;
+    z-index: 1;
+}
+.inner-content{
+    height: 100%;
+    width: 100%;
+    color: #fff;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    z-index: 5;
+}
+.inner-content nav{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: nb;
+    padding: 3vw;
+    font-size: .91vw;
+}
+.inner-content nav a{
+    color: #fff;
+    text-decoration: none;
+    font-weight: lighter;
+    cursor: pointer;
+}
+.inner-content nav #menu{
+    position: relative;
+}
+.inner-content nav #menu::after{
+    content: '';
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    background-color: #fff;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform .35s ease-out;
+}
+.inner-content nav #menu:hover::after{
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+.page1 .inner-content h1{
+    text-align: center;
+    letter-spacing: -1.5vw;
+    font-size: 22vw;
+    font-family: rejo;
+}
+.page1 .inner-content h1 span{
+    display: inline-block;
+}
+.page2{
+    height: 100vh;
+    width: 100vw;
+    background-color: #fff;
+}
+.page2 .page2-top{
+    height: 100px;
+    width: 100vw;
+    padding: .6vw 3vw;
+    margin-top: 30px;
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+}
+.page2 .page2-top h3{
+    font-size: 1.7vw;
+    font-weight: lighter;
+    letter-spacing: -.5px;
+    color: #141414;
+}
+.page2 .page2-top .first-text{
+    overflow: hidden;
+}
+.page2 .page2-top-border{
+    height: 1px;
+    width: 0vw;
+    margin: .6vw 3vw;
+    background-color: rgb(71, 71, 71);
+}
+.page2 .page2-bottom{
+    height: 415px;
+    width: 100vw;
+    overflow: hidden;
+}
+.page2 .page2-bottom .btm-text{
+    padding: 2vw 3vw;
+    overflow: hidden;
+}
+.page2 .page2-bottom .btm-text h2 .up {
+    overflow: hidden;
+}
+.page2 .page2-bottom .btm-text h2 span{
+    font-size: 4.45vw;
+    font-weight: lighter;
+    line-height: 1;
+    letter-spacing: -1px;
+    display: inline-block;
+    overflow: hidden;
+}
+.page3{
+    height: 70vh;
+    width: 100vw;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.page3 .page3-text{
+    overflow: hidden;
+    height: 155px;
+}
+.page3 .page3-text h4{
+    color: #161616;
+    font-weight: lighter;
+    display: flex;
+    align-items: self-start;
+    justify-content: center;
+    gap: 5px;
+    margin-bottom: 15px;
+}
+.page3 .page3-text h4 span{
+    font-size: .7vw;
+    background-color: #000;
+    color: #fff;
+    border-radius: 100px;
+    padding: 4px 6px;
+    text-align: center;
+}
+.page3 .page3-text h4 i{
+    color: #161616;
+    margin-top: 2px;
+}
+.page3 .page3-text h1{
+    cursor: pointer;
+    font-size: 4vw;
+    font-weight: lighter;
+    line-height: 1;
+    position: relative;
+}
+.page3 .page3-text h1::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    left: 0;
+    bottom: 0;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    background-color: #000000;
+    transition: transform .4s ease-out;
+}
+.page3 .page3-text h1:hover::after{
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+.page4{
+    height: 100vh;
+    width: 100vw;
+    background-color: #fff;
+}
+.page4 .page4-text{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1vw 3vw;
+}
+.page4 .page4-text h2{
+    font-weight: lighter;
+    font-size: 1.7vw;
+    letter-spacing: -1px;
+    position: relative;
+    cursor: pointer;
+}
+.page4 .page4-text h2::after{
+    content: '';
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    transform: scaleX(0);
+    background-color: #000;
+    transform-origin: bottom right;
+    transition: transform .35s ease-out;
+}
+.page4 .page4-text h2:hover::after{
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+.page4 .page4-video{
+    height: 550px;
+    width: 100vw;
+    padding: 0vw 3vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.page4 .page4-video .item{
+    height: 550px;
+    width: 32.7%;
+    position: relative;
+}
+.page4 .page4-video .item svg{
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.page4 .page4-video .item:hover img{
+    display: none;
+}
+.page4 .page4-video .item video,.page4 .page4-video .item img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    position: absolute;
+    cursor: pointer;
+}
+.page5{
+    height: 100vh;
+    width: 100vw;
+    background-color: #fff;
+}
+.page5 .page5-top{
+    height: 100px;
+    width: 100vw;
+    padding: .6vw 3vw;
+    margin-top: 30px;
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+}
+.page5 .page5-top h3{
+    font-size: 1.7vw;
+    font-weight: lighter;
+    letter-spacing: -.5px;
+    color: #141414;
+}
+.page5 .page5-top .top-text{
+    overflow: hidden;
+}
+.page5 .page5-top-border{
+    height: 1px;
+    width: 0vw;
+    margin: .6vw 3vw;
+    background-color: rgb(71, 71, 71);
+}
+.page5 .page5-bottom{
+    height: 415px;
+    width: 100vw;
+    overflow: hidden;
+}
+.page5 .page5-bottom .btm-text{
+    padding: 2vw 3vw;
+    overflow: hidden;
+}
+.page5 .page5-bottom .btm-text h2 .up {
+    overflow: hidden;
+}
+.page5 .page5-bottom .btm-text h2 span{
+    font-size: 4.45vw;
+    font-weight: lighter;
+    line-height: 1;
+    letter-spacing: -1px;
+    display: inline-block;
+    overflow: hidden;
+}
+.page6{
+    height: 90vh;
+    width: 100vw;
+    background-color: #fff;
+    position: relative;
+}
+.page6 video{
+    position: absolute;
+    height: 150%;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.page6 svg{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    height: 90%;
+}
+.page6 .crsr{
+    height: 7vw;
+    width: 7vw;
+    background-color: #000;
+    position: fixed;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* z-index: 99; */
+}
+.page6 .crsr h2{
+    color: #fff;
+    font-weight: lighter;
+    font-size: 1.3vw;
+}
+.page6 .page6-text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color: #fff;
+}
+.page6 .page6-text .seat{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.page6 .page6-text .seat span{
+    font-size: 5vw;
+}
+.page6 .page6-text .seat h2{
+    font-size: 5vw;
+    font-weight: lighter;
+    letter-spacing: -1.5px;
+}
+.page6 .page6-text .seat .seat-span{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height:70px;
+    overflow: hidden;
+}
+.page6 .page6-text .seat .seat-span:hover h2{
+    transform: translateY(-400%);
+    transition: transform 1s ease-in-out;
+}
+.page7{
+    height: 100vh;
+    width: 100vw;
+    background-color: #fff;
+}
+.page7 .page7-top{
+    height: 100px;
+    width: 100vw;
+    padding: .6vw 3vw;
+    margin-top: 30px;
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+}
+.page7 .page7-top h3{
+    font-size: 1.7vw;
+    font-weight: lighter;
+    letter-spacing: -.5px;
+    color: #141414;
+}
+.page7 .page7-top .top-text{
+    overflow: hidden;
+}
+.page7 .page7-top-border{
+    height: 1px;
+    width: 0vw;
+    margin: .6vw 3vw;
+    background-color: rgb(71, 71, 71);
+}
+.page7 .page7-bottom{
+    height: 415px;
+    width: 100vw;
+    overflow: hidden;
+}
+.page7 .page7-bottom .btm-text{
+    padding: 2vw 3vw;
+    overflow: hidden;
+}
+.page7 .page7-bottom .btm-text h2 .up {
+    overflow: hidden;
+}
+.page7 .page7-bottom .btm-text h2 span{
+    font-size: 4.3vw;
+    font-weight: lighter;
+    line-height: 1;
+    letter-spacing: -1px;
+    display: inline-block;
+    overflow: hidden;
+}
+.page8{
+    height: 100vh;
+    width: 100vw;
+    background-color: #fff;
+}
+.page8 .text{
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: 0vw 3vw;
+}
+.page8 .text h1{
+    font-size: 8.5vw;
+    font-family: rejo;
+    font-weight: 500;
+}
+.page8 .text h3{
+    font-size: 1.8vw;
+    font-weight: lighter;
+    position: relative;
+    cursor: pointer;
+}
+.page8 .text h3::after{
+    content: '';
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    transform: scaleX(0);
+    background-color: #000;
+    transform-origin: bottom right;
+    transition: transform .35s ease-out;
+}
+.page8 .text h3:hover::after{
+    transform-origin: bottom left;
+    transform: scaleX(1);
+}
+.page8 .text h3 i{
+    font-size: 1.9vw;
+    margin-right: 10px;
+}
+.page8 .page8-top-border{
+    height: 1px;
+    width: 94vw;
+    margin: .6vw 3vw;
+    background-color: rgb(71, 71, 71);
+}
+.swiper {
+    width: 100%;
+    height: 50vh;
+    margin-top: -5vw;
+    position: relative;
+}
+.swiper-slide {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+}
+.swiper-slide img {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    position: absolute;
+    bottom: 0;
+}
+.swiper {
+    margin-left: auto;
+    margin-right: auto;
+}
+.page9{
+    height: 50vh;
+    width: 100vw;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.page9 .page9-text{
+    overflow: hidden;
+    height: 155px;
+}
+.page9 .page9-text h4{
+    color: #161616;
+    font-weight: lighter;
+    display: flex;
+    align-items: self-start;
+    justify-content: center;
+    gap: 5px;
+    margin-bottom: 15px;
+}
+.page9 .page9-text h4 i{
+    color: #161616;
+    margin-top: 2px;
+}
+.page9 .page9-text h1{
+    cursor: pointer;
+    font-size: 4vw;
+    font-weight: lighter;
+    line-height: 1;
+    position: relative;
+}
+.page9 .page9-text h1::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    left: 0;
+    bottom: 0;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    background-color: #000000;
+    transition: transform .4s ease-out;
+}
+.page9 .page9-text h1:hover::after{
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+footer{
+    height: 100vh;
+    width: 100vw;
+    background-color:#0E0E0E;
+}
+footer .footer-top{
+    height: 65vh;
+    width: 100vw;
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.footer-top .first{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15vw;
+    padding: 2.5vw;
+    color: #fff;
+}
+.footer-top .first .first-top h2{
+    font-weight: lighter;
+    letter-spacing: -.5px;
+}
+.footer-top .first .first-top button{
+    padding:  15px 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    border: 1px solid #fff;
+    font-size: 1.1vw;
+    font-weight: lighter;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color .3s ease;
+}
+.footer-top .first .first-top button:hover{
+    background-color: #fff;
+    color: #000;
+}
+.footer-top .first .first-btm h4{
+    font-weight: lighter;
+}
+.footer-top .second{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 100px;
+    margin-top: -2.5vw;
+    padding-right: 3vw;
+    color: #fff;
+}
+.second .second-one{
+    display: flex;
+    flex-direction: column;
+    gap: 15vw;
+}
+.second .second-one .span span{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    cursor: pointer;
+}
+.second .second-one .span>span::after,.second .second-one .span1>span::after{
+    content: '';
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    bottom: 0%;
+    left: 0%;
+    transform: scaleX(0);
+    background-color: #ffffff;
+    transform-origin: bottom right;
+    transition: transform .35s ease-out;
+}
+.second .second-one .span>span:hover::after,.second .second-one .span1>span:hover::after{
+    transform-origin: bottom left;
+    transform: scaleX(1);
+}
+.second .second-two{
+    display: flex;
+    flex-direction: column;
+    gap: 17.5vw;
+}
+.second .second-two .span span{
+    display: flex;
+    position: relative;
+    cursor: pointer;
+}
+.second .second-two .span>span::after,.second .second-two .span1>span::after{
+    content: '';
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    bottom: 0%;
+    left: 0%;
+    transform: scaleX(0);
+    background-color: #ffffff;
+    transform-origin: bottom right;
+    transition: transform .35s ease-out;
+}
+.second .second-two .span>span:hover::after,.second .second-two .span1>span:hover::after{
+    transform-origin: bottom left;
+    transform: scaleX(1);
+}
+.second .second-two .span1{
+    position: relative;
+    cursor: pointer;
+}
+.second .second-one .span1{
+    position: relative;
+    cursor: pointer;
+}
+footer .footer-bottom{
+    height: 35vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+footer .footer-bottom h1 span{
+    display: inline-block;
+   font-size: 19vw;
+   margin-top: -3.2vw;
+   color: #fff;
+}
